@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="links.html">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:insert="nav.html" th:object="${film}"></div>
+<form th:action="@{'/update-film'}" method="post">
+    <div class="row mt-2 justify-content-center">
+        <input type="hidden" name="id" th:value="${film.id}">
+        <div class="col-6" >
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <label>ID</label>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" readonly  th:value="${film.id}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <label>NAME</label>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" name="name" th:value="${film.name}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <label>DESCRIPTION</label>
+                    </div>
+                    <div>
+                        <textarea class="form-control" rows="3" name="description"
+                                  th:text="${film.description}"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <label>YEAR</label>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" name="year" th:value="${film.year}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <label>RATING</label>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" name="rating" th:value="${film.rating}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <button class="btn btn-sm btn-success">UPDATE FILM</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<form th:action="@{'/delete-film'}" method="post">
+    <div class="row" style="margin-left: 250px">
+        <div class="col-12">
+            <div>
+                <input type="hidden" name="id" th:value="${film.id}">
+                <button class="btn btn-sm btn-danger">DELETE FILM</button>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

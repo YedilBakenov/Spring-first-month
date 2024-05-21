@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="links.html">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:insert="nav.html"></div>
+<form th:action="@{'/add-film'}" method="post">
+    <div class="row mt-2 justify-content-center">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <label>NAME</label>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" name="name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <label>DESCRIPTION</label>
+                    </div>
+                    <div>
+                        <textarea class="form-control" rows="3" name="description"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <label>YEAR</label>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" name="year">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <label>RATING</label>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" name="rating">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <button class="btn btn-success btn-sm">ADD FILM</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

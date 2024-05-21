@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3 th:each="f: ${films}">
+        <span th:text="${f.id}"></span>.
+        <span th:text="${f.name}"></span>, year:
+        <span th:text="${f.year}"></span>, rating:
+        <span th:text="${f.rating}"></span>, description:
+        <span th:text="${f.description}"></span>
+    </h3>
+
+    <form action="/add-film" method="post">
+        <div>
+            <div>
+                name:
+            </div>
+            <div>
+                <input type="text" name="name">
+            </div>
+            <div>
+                year:
+            </div>
+            <div>
+                <input type="number" name="year">
+            </div>
+            <div>
+                rating:
+            </div>
+            <div>
+                <input type="text" name="rating">
+            </div>
+            <div>
+                description:
+            </div>
+            <div>
+                <input type="text" name="description">
+            </div>
+            <div>
+                <button>ADD FILM</button>
+            </div>
+        </div>
+    </form>
+
+    <form action="/add-film2" method="post">
+        <div>
+            <div>
+                name:
+            </div>
+            <div>
+                <input type="text" name="name">
+            </div>
+            <div>
+                year:
+            </div>
+            <div>
+                <input type="number" name="year">
+            </div>
+            <div>
+                rating:
+            </div>
+            <div>
+                <input type="text" name="rating">
+            </div>
+            <div>
+                description:
+            </div>
+            <div>
+                <input type="text" name="description">
+            </div>
+            <div>
+                <button>ADD FILM</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
