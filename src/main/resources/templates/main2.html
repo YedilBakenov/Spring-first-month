@@ -31,13 +31,31 @@
         </thead>
         <tbody>
         <tr th:each="f: ${films}">
-            <td th:text="${f.id}"></td>
-            <td th:text="${f.name}"></td>
-            <td th:text="${f.description}"></td>
-            <td th:text="${f.rating}"></td>
-            <td th:text="${f.year}"></td>
-            <td style="width: 7%;"><a class="btn btn-secondary btn-sm"
-                                      th:href="@{'/details-film/' + ${f.id}}">DETAILS</a></td>
+
+            <div th:if="${f.rating <8.6}">
+
+                <td style="color: red" th:text="${f.id}"></td>
+                <td style="color: red" th:text="${f.name}"></td>
+                <td style="color: red" th:text="${f.description}"></td>
+                <td style="color: red" th:text="${f.rating}"></td>
+                <td style="color: red" th:text="${f.year}"></td>
+                <td style="width: 7%; color: red;"><a class="btn btn-secondary btn-sm"
+                                          th:href="@{'/details-film/' + ${f.id}}">DETAILS</a></td>
+
+            </div>
+
+            <div th:if="${f.rating > 8.6}">
+
+                <td style="color: green" th:text="${f.id}"></td>
+                <td style="color: green" th:text="${f.name}"></td>
+                <td style="color: green" th:text="${f.description}"></td>
+                <td style="color: green" th:text="${f.rating}"></td>
+                <td style="color: green" th:text="${f.year}"></td>
+                <td style="width: 7%; color: green;"><a class="btn btn-secondary btn-sm"
+                                                      th:href="@{'/details-film/' + ${f.id}}">DETAILS</a></td>
+
+            </div>
+
         </tr>
         </tbody>
     </table>
